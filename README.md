@@ -1,27 +1,39 @@
 # SCADA-like con Node-RED
 
-En construcción...
+Sistema experimental simil SCADA con [Node-RED](https://nodered.org/) y manipulación de gráficos vectoriales (SVG). Este proyecto está basado en el trabajo *Tutorial SVG Node (SCADA-Like) Machine Monitoring System Node-Red* de [Yaser Ali Husen](https://www.lean-tool.com).
 
-Sistema simil SCADA experimental con Node-RED
+SCADA, acrónimo de Supervisory Control And Data Acquisition (Control Supervisor y Adquisición de Datos) es un concepto que se emplea para realizar un software para ordenadores que permite controlar y supervisar procesos industriales a distancia. Facilita retroalimentación en tiempo real con los dispositivos de campo (sensores y actuadores), y controla el proceso automáticamente. Provee de toda la información que se genera en el proceso productivo (supervisión, control calidad, control de producción, almacenamiento de datos, etc.) y permite su gestión e intervención. [Wikipedia](https://es.wikipedia.org/wiki/SCADA).
 
-Basado en el trabajo "Tutorial SVG Node (SCADA-Like) Machine Monitoring System Node-Red" de Yaser Ali Husen (www.lean-tool.com).
+![](./docs/Scada_std_anim_no_lang.gif)
+*Simulación típica de un SCADA para una planta de proceso, basado en un [diagrama de tuberías e instrumentación](https://es.wikipedia.org/wiki/Diagrama_de_tuber%C3%ADas_e_instrumentaci%C3%B3n).*
 
-Dependencias:
+## Implementación con Node-RED
 
-Node-RED
-https://nodered.org/
+Con Node-RED se puede diseñar la lógica de control del sistema mediante el uso de diferentes widgets, y de eventos que disparen las animaciones del dashboard. Respecto a las diferentes animaciones, se utilizó el nodo [*node-red-contrib-ui-svg*](https://flows.nodered.org/node/node-red-contrib-ui-svg) que permite interactuar con gráficos vectoriales SVG en el dashboard.
 
-node-red-contrib-ui-svg
-https://flows.nodered.org/node/node-red-contrib-ui-svg
+Los gráficos vectoriales escalables o gráficos vectoriales redimensionables (del inglés: Scalable Vector Graphics (SVG)) es un formato de gráficos vectoriales bidimensionales, tanto estáticos como animados, en formato de lenguaje de marcado extensible XML (Extensible Markup Language), es decir que se compone por código y cuya especificación es un estándar abierto desarrollado por el W3C desde 1999. A diferencia de aquellos gráficos codificados en webP, JPG, PNG, o TIFF (Rasters), los SVG pueden ser interactivos y dinámicos y esto se debe a que no se componen por mapa de bits, sino que están compuestos por vectores, que son instrucciones matemáticas que se le dan al navegador o programas de ediciones de estos gráficos vectoriales, para escalarlos de manera infinita y sin perder resolución o calidad en el gráfico. [Wikipedia](https://es.m.wikipedia.org/wiki/Gr%C3%A1ficos_vectoriales_escalables).
 
-https://es.m.wikipedia.org/wiki/Gr%C3%A1ficos_vectoriales_escalables
+La estructura básica de un archivo SVG es la siguiente:
 
-Créditos:
-	
-Krupp-Renn process diagram.svg
-https://commons.wikimedia.org/wiki/File:Krupp-Renn_Process_diagram.svg
+```xml
+<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" >
+    <title>Estructura basica del SVG</title>
+    <style>
+        .circle {fill: blue}
+    </style>
+    <circle class="circle" cx="5" cy="5" r="5" />
+</svg>
+```
 
-Nodo "function 1"
+Mediante diferentes funciones javascripts, implementadas utilizando el nodo `function`, es posible alterar el contenido del gráfico SVG que se despliega en el dashboard del sistema. 
+
+![](./docs/screenshot_editor.png)
+
+El nodo que recibe los mensajes de las distintas funciones y se encarga de alterar el SVG es `SVG graphics`. En el *tab* **SVG** se carga el código del gráfico a utilizar. 
+
+![](./docs/svg_graphics.png)
+
+#### Nodo "function 1"
 
 ```javascript
 var colorss;
@@ -166,7 +178,7 @@ return msg;
 
 ## Licencia
 
-Este trabajo está protegido por la **Licencia MIT**. Puedes acceder a la versión original de la licencia (en inglés) a través del archivo [LICENSE](./LICENSE) o en línea en [The MIT License (MIT)](https://mit-license.org/). También proporcionamos una traducción no oficial desde [Wikipedia](https://es.m.wikipedia.org/wiki/Licencia_MIT#La_licencia):
+Tanto el trabajo original de *Yaser Ali Husen*, como el archivo SVG [*Krupp-Renn process diagram.svg*](https://commons.wikimedia.org/wiki/File:Krupp-Renn_Process_diagram.svg) están protegidos por sus respectivas licencias. El resto del trabajo está protegido por la **Licencia MIT**. Puedes acceder a la versión original de la licencia (en inglés) a través del archivo [LICENSE](./LICENSE) o en línea en [The MIT License (MIT)](https://mit-license.org/). También proporcionamos una traducción no oficial desde [Wikipedia](https://es.m.wikipedia.org/wiki/Licencia_MIT#La_licencia):
 
 Copyright (c) 2024 Lucas Martín Treser
 
