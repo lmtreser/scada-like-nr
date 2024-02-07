@@ -33,27 +33,24 @@ El nodo que recibe los mensajes de las distintas funciones y se encarga de alter
 
 ![](./docs/svg_graphics.png)
 
-#### Nodo "function 1"
+La idea es alterar el contenido de diferentes variables, y luego inyectarlas en el SVG para reemplazar propiedades de alguna parte del gráfico, por ejemplo el contenido de una etiqueta de texto, el color de una línea, etc. A continuación un ejemplo de la implementación:
 
 ```javascript
-var colorss;
-var colorte;
-var textoss;
+var color_change;
+var text_change;
 
 //set global variable for start/stop
 var toogle = context.get('toogle') || "false";
 
 if (toogle == true){
     toogle = false;
-    colorss = "#ff0000";
-    colorte = "#ececec";
-    textoss = "STOP";
+    color_change = "#ff0000";
+    text_change = "STOP";
 }
 else {
     toogle = true;
-    colorss = "#00ff00";
-    colorte = "#ff9800";
-    textoss = "START";
+    color_change = "#00ff00";
+    text_change = "START";
 }
 context.set('toogle', toogle);
 
@@ -62,107 +59,14 @@ msg.payload = [
         "command": "set_style",
         "selector": "#path3951",
         "attributeName": "fill",
-        "attributeValue": colorss
+        "attributeValue": color_change
     },
     {
         "command": "update_text",
         "selector": "#tspan2836-7",
-        "textContent": textoss
-    },
-    {
-        "command": "set_style",
-        "selector": "#rect2988",
-        "attributeName": "fill",
-        "attributeValue": colorte
-    },
-    {
-        "command": "update_text",
-        "selector": "#tspan2836",
-        "textContent": "30"
+        "textContent": text_change
     }
-    ];
-
-return msg;
-```
-
-nodo "function 2"
-
-```javascript
-msg.payload = [
-    {
-        "command": "update_text",
-        "selector": "#tspan2836",
-        "textContent": msg.payload
-    }
-    ];
-
-return msg;
-```
-
-nodo "function 3"
-
-```javascript
-var flecha1;
-var flecha2;
-var flecha3;
-var flechacc;
-
-//set global variable for animar
-var estado = context.get('animar') || 0;
-
-switch (estado){
-    case 0:
-        flecha1 = "inline";
-        flecha2 = "none";
-        flecha3 = "none";
-        flechacc = "#ffdd55";
-        estado = 1;
-    break;
-
-    case 1:
-        flecha1 = "none";
-        flecha2 = "inline";
-        flecha3 = "none";
-        flechacc = "#666666";
-        estado = 2;
-    break;
-
-    case 2:
-        flecha1 = "none";
-        flecha2 = "none";
-        flecha3 = "inline";
-        flechacc = "#d45500";
-        estado = 0;
-    break;
-}
-context.set('animar', estado);
-
-msg.payload = [
-    {
-        "command": "set_style",
-        "selector": "#path5806",
-        "attributeName": "display",
-        "attributeValue": flecha1
-    },
-    {
-        "command": "set_style",
-        "selector": "#path5806-5",
-        "attributeName": "display",
-        "attributeValue": flecha2
-    },
-    {
-        "command": "set_style",
-        "selector": "#path5806-6",
-        "attributeName": "display",
-        "attributeValue": flecha3
-    },
-    {
-        "command": "set_style",
-        "selector": "#path4577-3-4-7-1",
-        "attributeName": "stroke",
-        "attributeValue": flechacc
-    }
-    ];
+];
 
 return msg;
 ```
