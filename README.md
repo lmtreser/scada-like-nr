@@ -1,4 +1,4 @@
-# Simil SCADA con Node-RED
+# SCADA-like con Node-RED
 
 En construcción...
 
@@ -158,10 +158,10 @@ return msg;
 ## RECURSOS
 
 - [Node Red: Machine Monitoring System SCADA-Like](https://www.youtube.com/watch?v=8d3fbDEnuFo)
-- [A Node-RED node to host a local DrawSvg service](https://flows.nodered.org/node/node-red-contrib-drawsvg)
-- [A Node-RED widget node to show interactive SVG (vector graphics) in the dashboard](https://flows.nodered.org/node/node-red-contrib-ui-svg)
 - [Creating SCADA-Like User Interfaces For Node-RED](https://ricolsen1supervc.wordpress.com/2019/09/29/creating-scada-like-user-interfaces-for-node-red/)
 - [Open Source HTML5 Synoptic Toolkit](https://scadavis.io)
+- [A Node-RED node to host a local DrawSvg service](https://flows.nodered.org/node/node-red-contrib-drawsvg)
+- [A Node-RED widget node to show interactive SVG (vector graphics) in the dashboard](https://flows.nodered.org/node/node-red-contrib-ui-svg)
 - [Easily create data-driven web UI's for Node-RED using any (or no) front-end library](https://flows.nodered.org/node/node-red-contrib-uibuilder)
 
 ## Licencia
