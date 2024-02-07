@@ -5,6 +5,7 @@ Sistema experimental simil SCADA con [Node-RED](https://nodered.org/) y manipula
 SCADA, acrónimo de Supervisory Control And Data Acquisition (Control Supervisor y Adquisición de Datos) es un concepto que se emplea para realizar un software para ordenadores que permite controlar y supervisar procesos industriales a distancia. Facilita retroalimentación en tiempo real con los dispositivos de campo (sensores y actuadores), y controla el proceso automáticamente. Provee de toda la información que se genera en el proceso productivo (supervisión, control calidad, control de producción, almacenamiento de datos, etc.) y permite su gestión e intervención. [Wikipedia](https://es.wikipedia.org/wiki/SCADA).
 
 ![](./docs/Scada_std_anim_no_lang.gif)
+
 *Simulación típica de un SCADA para una planta de proceso, basado en un [diagrama de tuberías e instrumentación](https://es.wikipedia.org/wiki/Diagrama_de_tuber%C3%ADas_e_instrumentaci%C3%B3n).*
 
 ## Implementación con Node-RED
@@ -71,7 +72,7 @@ msg.payload = [
 return msg;
 ```
 
-Dashboard simil SCADA:
+Resultados obtenidos, dashboard simil SCADA:
 
 ![](./docs/screenshot_ui.png)
 
