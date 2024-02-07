@@ -1,5 +1,7 @@
 # Simil SCADA con Node-RED
 
+En construcción...
+
 Sistema simil SCADA experimental con Node-RED
 
 Basado en el trabajo "Tutorial SVG Node (SCADA-Like) Machine Monitoring System Node-Red" de Yaser Ali Husen (www.lean-tool.com).
@@ -11,6 +13,8 @@ https://nodered.org/
 
 node-red-contrib-ui-svg
 https://flows.nodered.org/node/node-red-contrib-ui-svg
+
+https://es.m.wikipedia.org/wiki/Gr%C3%A1ficos_vectoriales_escalables
 
 Créditos:
 	
