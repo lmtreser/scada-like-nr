@@ -71,6 +71,10 @@ msg.payload = [
 return msg;
 ```
 
+Dashboard simil SCADA:
+
+![](./docs/screenshot_ui.png)
+
 ## RECURSOS
 
 - [Node Red: Machine Monitoring System SCADA-Like](https://www.youtube.com/watch?v=8d3fbDEnuFo)
