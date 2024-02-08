@@ -30,11 +30,11 @@ Mediante diferentes funciones escritas en javascript, e implementadas utilizando
 
 ![](./docs/screenshot_editor.png)
 
-El nodo que recibe los mensajes de las distintas funciones y se encarga de alterar el SVG es `SVG graphics`. En el *tab* **SVG** se carga el código del gráfico a utilizar. 
+El nodo que recibe los mensajes procesados por las funciones, y se encarga de manipular el gráfico SVG, es `SVG graphics`. En el *tab* **SVG** se carga el código del gráfico a utilizar. 
 
 ![](./docs/svg_graphics.png)
 
-La idea es alterar el contenido de diferentes variables, y luego inyectarlas en el SVG para reemplazar propiedades de alguna parte del gráfico, por ejemplo el contenido de una etiqueta de texto, el color de una línea, etc. A continuación un ejemplo de la implementación:
+La idea es modificar el contenido de diferentes variables, y luego inyectarlas en el SVG para reemplazar propiedades de alguna parte del gráfico, por ejemplo el contenido de una etiqueta de texto, el color de una línea, etc. A continuación un ejemplo de la implementación:
 
 ```javascript
 var color_change;
