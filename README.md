@@ -26,7 +26,7 @@ La estructura básica de un archivo SVG es la siguiente:
 </svg>
 ```
 
-Mediante diferentes funciones escritas en javascript, e implementadas utilizando el nodo `function`, es posible modificar el contenido del gráfico SVG que se despliega en el dashboard del sistema. 
+Mediante diferentes funciones escritas en JavaScript, e implementadas utilizando el nodo `function`, es posible modificar el contenido del gráfico SVG que se despliega en el dashboard del sistema. 
 
 ![](./docs/screenshot_editor.png)
 
