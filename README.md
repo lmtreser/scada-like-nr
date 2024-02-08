@@ -2,7 +2,7 @@
 
 Sistema experimental simil SCADA con [Node-RED](https://nodered.org/) y manipulación de gráficos vectoriales (SVG). Este proyecto está basado en el trabajo *Tutorial SVG Node (SCADA-Like) Machine Monitoring System Node-Red* de [Yaser Ali Husen](https://www.lean-tool.com).
 
-SCADA, acrónimo de Supervisory Control And Data Acquisition (Control Supervisor y Adquisición de Datos) es un concepto que se emplea para realizar un software para ordenadores que permite controlar y supervisar procesos industriales a distancia. Facilita retroalimentación en tiempo real con los dispositivos de campo (sensores y actuadores), y controla el proceso automáticamente. Provee de toda la información que se genera en el proceso productivo (supervisión, control calidad, control de producción, almacenamiento de datos, etc.) y permite su gestión e intervención. [Wikipedia](https://es.wikipedia.org/wiki/SCADA).
+SCADA, acrónimo de Supervisory Control and Data Acquisition (Control, Supervisión y Adquisición de Datos) es un concepto que se emplea para realizar un software que permite controlar y supervisar procesos industriales a distancia. Facilita retroalimentación en tiempo real con los dispositivos de campo (sensores y actuadores), y controla el proceso automáticamente. Provee de toda la información que se genera en el proceso productivo y permite su gestión e intervención. [Wikipedia](https://es.wikipedia.org/wiki/SCADA).
 
 ![](./docs/Scada_std_anim_no_lang.gif)
 
@@ -12,7 +12,7 @@ SCADA, acrónimo de Supervisory Control And Data Acquisition (Control Supervisor
 
 Con Node-RED se puede diseñar la lógica de control del sistema mediante el uso de diferentes widgets, y de eventos que disparen las animaciones del dashboard. Respecto a las diferentes animaciones, se utilizó el nodo [*node-red-contrib-ui-svg*](https://flows.nodered.org/node/node-red-contrib-ui-svg) que permite interactuar con gráficos vectoriales SVG en el dashboard.
 
-Los gráficos vectoriales escalables o gráficos vectoriales redimensionables (del inglés: Scalable Vector Graphics (SVG)) es un formato de gráficos vectoriales bidimensionales, tanto estáticos como animados, en formato de lenguaje de marcado extensible XML (Extensible Markup Language), es decir que se compone por código y cuya especificación es un estándar abierto desarrollado por el W3C desde 1999. A diferencia de aquellos gráficos codificados en webP, JPG, PNG, o TIFF (Rasters), los SVG pueden ser interactivos y dinámicos y esto se debe a que no se componen por mapa de bits, sino que están compuestos por vectores, que son instrucciones matemáticas que se le dan al navegador o programas de ediciones de estos gráficos vectoriales, para escalarlos de manera infinita y sin perder resolución o calidad en el gráfico. [Wikipedia](https://es.m.wikipedia.org/wiki/Gr%C3%A1ficos_vectoriales_escalables).
+SVG, gráficos vectoriales escalables (del inglés: Scalable Vector Graphics) es un formato de gráficos vectoriales bidimensionales, tanto estáticos como animados, en formato XML (Extensible Markup Language), es decir que se compone por código y cuya especificación es un estándar abierto desarrollado por el W3C desde 1999. A diferencia de aquellos gráficos codificados en webP, JPG, PNG, o TIFF (Rasters), los SVG pueden ser interactivos y dinámicos y esto se debe a que no se componen por mapa de bits, sino que están compuestos por vectores, que son instrucciones matemáticas que se le dan al navegador o programas de ediciones de estos gráficos vectoriales, para escalarlos de manera infinita y sin perder resolución o calidad en el gráfico. [Wikipedia](https://es.m.wikipedia.org/wiki/Gr%C3%A1ficos_vectoriales_escalables).
 
 La estructura básica de un archivo SVG es la siguiente:
 
@@ -26,7 +26,7 @@ La estructura básica de un archivo SVG es la siguiente:
 </svg>
 ```
 
-Mediante diferentes funciones javascripts, implementadas utilizando el nodo `function`, es posible alterar el contenido del gráfico SVG que se despliega en el dashboard del sistema. 
+Mediante diferentes funciones escritas en javascript, e implementadas utilizando el nodo `function`, es posible alterar el contenido del gráfico SVG que se despliega en el dashboard del sistema. 
 
 ![](./docs/screenshot_editor.png)
 
