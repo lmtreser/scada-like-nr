@@ -25,6 +25,9 @@ La estructura básica de un archivo SVG es la siguiente:
     <circle class="circle" cx="5" cy="5" r="5" />
 </svg>
 ```
+Y genera la siguiente figura:
+
+![](./docs/circle.png#center)
 
 Mediante diferentes funciones escritas en JavaScript, e implementadas utilizando el nodo `function`, es posible modificar el contenido del gráfico SVG que se despliega en el dashboard del sistema. 
 
